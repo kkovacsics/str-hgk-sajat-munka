@@ -1,7 +1,7 @@
 # Gyakorló feladat - REPL
 
 ## 1. Feladat
-Ellenőrizd a telepített NodeJS verziószámát!  
+Ellenőrizd a telepített NodeJS verziószámát!<br>
 `node -v`
 
 ## 2. Feladat
