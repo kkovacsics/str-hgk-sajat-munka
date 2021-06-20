@@ -3,8 +3,10 @@ const MoviesService = (moviesApi) => {
 
   const getAllMovies = async () => await moviesPromise
 
-  const findById = (movies, id) => movies.find(movie => movie.id === id)
-  const findMovieById = async (id) => findById(await moviesPromise, id)
+  const findMovieById = async (id) => {
+    const movies = await moviesPromise
+    return movies.find(movie => movie.id === id)
+  }
 
   const generateNewMovieId = (movies) => {
     const sortedMovies = [...movies].sort((a, b) => a.id > b.id)
@@ -22,7 +24,7 @@ const MoviesService = (moviesApi) => {
     let movies = await moviesPromise
     movies = movies.map(movie => movie.id === id ? { id, producer, title } : movie)
     await moviesApi.save(movies)
-    return findById(movies, id)
+    return findMovieById(id)
   }
 
   const removeMovie = async (id) => {
