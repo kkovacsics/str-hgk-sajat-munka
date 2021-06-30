@@ -10,7 +10,9 @@ function setYearToMovies () {
     const year = 1980 +
       Math.floor(index / 3) * 10 +
       Math.floor(Math.random() * 10)
+    // eslint-disable-next-line no-undef
     print(year)
+    // eslint-disable-next-line no-undef
     db.movies.update({ title: title }, { $set: { releaseYear: year } })
   })
 }
