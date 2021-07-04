@@ -4,7 +4,7 @@ Cursor függvényeinek gyakorlása videoStore adatbázissal
 `use videoStore`
 
 2. Számold meg, hány akció- és romantikus filmed van összesen!  
-`db.movies.find({category: {$in: ["action","romantic"]}})`
+`db.movies.find({category: {$in: ["action","romantic"]}}).count()`
 3. Kérdezd le a „FANTASY” filmek nevét és a kategóriáját. Mentsd le a listát (Cursor-t) egy változóba!  
 `var myList = db.movies.find({category: "fantasy"},{_id:0,title:1,category:1})`
 4. Írj egy ciklust, amely végigiterál a listán, és kiírja filmek a nevét és kategóriáját => példa: Végtelen történet: FANTASY (tipp: print() függvénnyel lehet kiíratni az értékeket Mongo shell-ben)!  

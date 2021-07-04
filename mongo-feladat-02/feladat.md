@@ -36,7 +36,7 @@ A videoStore feladat folytatása (update, find, projection)
 `db.movies.find({releaseYear: {$gt: 1990, $lt: 2010}, category: "action"})`
 
 10. Kérdezd le a filmeket, amelyeknek a kategóriája NEM fantasy ($ne)!  
-`db.movies.find({category: {$ne: "action"}})`
+`db.movies.find({category: {$ne: "fantasy"}})`
 
 
 **Projection**: egy lekérdezés során van, hogy érzékeny adatainkat nem akarjuk elküldeni, vagy csak nincs okunk minden tulajdonságot lekérni egy dokumentumról. A szerveroldalról megjelenített adatok kezelése ezt a célt szolgálja.

@@ -13,7 +13,7 @@ Elsőként olvasd végig az összes pontot!
 - director: szöveges tartalom, 3 rendező közül vegyesen szétválogatva => Steven Spielberg, Clint Eastwood, James Cameron  
 `db.movies.save([`  
 `  {title: "Fantasy 01", category: "fantasy", director: "Steven Spielberg"},`  
-`	title: "Fantasy 02", category: "fantasy", director: "Clint Eastwood"},`  
+`	{title: "Fantasy 02", category: "fantasy", director: "Clint Eastwood"},`  
 `	{title: "Fantasy 03", category: "fantasy", director: "James Cameron"},`  
 `	{title: "Action 01", category: "action", director: "Steven Spielberg"},`  
 `	{title: "Action 02", category: "action", director: "Clint Eastwood"},`  
