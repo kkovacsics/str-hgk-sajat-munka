@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: ESZT (Egészségügyi Szuri Tár)
+  description: API alkalmazás, amellyel nyilvántarthatjuk, melyik személy milyen védőoltást kapott az országban
+servers:
+  - url: http://localhost:3000
+paths:
+  /person/count:
+    get:
+      description: Returns the number of vaccinated persons
+      responses:
+        '200':
+          description: Number of persons returned successfully
+          content:
+            application/json:
+              schema:
+                type: number
+  /person/vaccinated:
+    get:
+      description: Returns a list of vaccinated persons
+      responses:
+        '200':
+          description: List of persons returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Person'
+components:
+  schemas:
+    Person:
+      type: object
+      required:
+        - id
+        - firstname
+        - lastname
+      properties:
+        id:
+          type: number
+        firstname:
+          type: string
+        lastname:
+          type: string
+        vaccine:
+          type: string
