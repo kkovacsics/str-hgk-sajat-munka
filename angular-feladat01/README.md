@@ -1,27 +1,38 @@
-# AngularFeladat01
+## A kész feladat feltöltésének helye:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
+Repo: **str-hgk-sajat-munka**
 
-## Development server
+Almappa: **angular-feladat-01**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Például: http://github.com/cherryApp/str-hgk-sajat-munka/angular-feladat-01
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Gyakorlófeladat
 
-## Build
+Készíts egy egyszerű, Angular alapú alkalmazást. Az alkalmazás célja, hogy ki- és bejelentkezést nyújtson a felhasználóknak.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1. Oldalak:
+    - home: a felhasználók bejelentkezés nélkül is elérhetik
+    - editor: a felhasználók csak editor vagy magasabb jogosultsággal érhetik el
+    - admin: a felhasználók csak admin jogosultsággal érhetik el
+    - login: minden felhasználó elérheti, a bejelentkezést valósítja meg. Sikeres belépés esetén a home oldalra irányít át.
 
-## Running unit tests
+2. Autentikáció és autorizáció megvalósítása: 
+    - Az autentikációhoz a json-server-auth NodeJS modult használd.
+    - Az azonosítás json-webtoken segítségével történjen.
+    - A tokenek ellenőrzésére és a kérésekhez csatolására használj interceptor-t.
+    - Hozz létre egy forbidden oldalt, ahol üzenetben tájékoztatod a felhasználót arról, hogy nincs joga megtekinteni a kért oldalt.
+    - Az egyes url-ek védelmét guard-okkal oldd meg, ezek irányítsák át a felhasználót a forbidden oldalra megfelelő jogosultság hiányában.
+    - A fejlécben a belépett felhasználóknak jelenjen meg egy logout gomb, amelyre kattintva a rendszer kijelentkezteti őket.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Az alkalmazás felépítése:
+    - Egyszerű felépítést használj, a fejlécben legyenek a kattintható linkek a navigációhoz, szintén innen legyen elérhető a login-oldal is.
+    - Használj natív Bootstrap layout-ot, a hangsúly nem a megjelenésen, hanem a login/logout helyes működésén van.
+    - Az egyes oldalak tartalma nem lényeges, csak a tesztelés segítik. Kivétel a login oldal, természetesen itt egy belépő űrlapot kell megjeleníteni.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Segítség
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Az autentikációt és autorizációt a következő osztályok segítik: AuthService, JwtInterceptorService, EditorGuard, AdminGuard.
+- Az egyes guard-okat, ha készen vannak, akkor az AppRoutingModule-ban vedd fel, a videókban bemutatott módon, a canActivate tömbben.
+- Ebben a sorrendben dolgozz: komponensek -> routing -> authService -> jwtInterceptorService -> guard-ok.
